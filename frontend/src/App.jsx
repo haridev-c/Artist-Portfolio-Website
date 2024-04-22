@@ -8,6 +8,8 @@ import CustomWorks from "./pages/CustomWorks";
 import Caricature from "./pages/Caricature";
 import ColorPortrait from "./pages/ColorPortrait";
 import PencilPortrait from "./pages/PencilPortrait";
+import Login from "./pages/Login";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/caricature" element={<Caricature />} />
           <Route path="/color-portrait" element={<ColorPortrait />} />
           <Route path="/pencil-portrait" element={<PencilPortrait />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </>
