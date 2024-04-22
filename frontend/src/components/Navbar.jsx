@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -8,9 +9,9 @@ function Navbar() {
         className="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn"
         data-wow-delay="0.1s"
       >
-        <a href="index.html" className="navbar-brand d-block d-lg-none">
+        <Link to="/" className="navbar-brand d-block d-lg-none">
           <h1 className="text-primary">Artful Alchemy</h1>
-        </a>
+        </Link>
         <button
           type="button"
           className="navbar-toggler"
@@ -24,22 +25,22 @@ function Navbar() {
           id="navbarCollapse"
         >
           <div className="navbar-nav ms-auto py-0">
-            <a href="index.html" className="nav-item nav-link active">
+            <Link to="/" className="nav-item nav-link active">
               Home
-            </a>
-            <a href="about.html" className="nav-item nav-link">
+            </Link>
+            <Link to="/about" className="nav-item nav-link">
               About
-            </a>
-            <a href="service.html" className="nav-item nav-link">
+            </Link>
+            <Link to="/services" className="nav-item nav-link">
               Services
-            </a>
+            </Link>
           </div>
-          <a
-            href="index.html"
+          <Link
+            to="/"
             className="navbar-brand bg-primary py-2 px-4 mx-3 d-none d-lg-block"
           >
             <h1 className="text-white">Artful Alchemy</h1>
-          </a>
+          </Link>
           <div className="navbar-nav me-auto py-0">
             {/* <!--<a href="project.html" className="nav-item nav-link">Projects</a>--> */}
             {/* <!-- Pages dropdown Starts --> */}
@@ -52,24 +53,24 @@ function Navbar() {
                 Pages
               </a>
               <div className="dropdown-menu rounded-0 shadow-sm border-0 m-0">
-                <a href="pencil-portrait.html" className="dropdown-item">
+                <Link to="/pencil-portrait" className="dropdown-item">
                   Pencil Portrait
-                </a>
-                <a href="color-portrait.html" className="dropdown-item">
+                </Link>
+                <Link to="/color-portrait" className="dropdown-item">
                   Colour Portraits
-                </a>
-                <a href="caricature.html" className="dropdown-item">
+                </Link>
+                <Link to="/caricature" className="dropdown-item">
                   Caricatures
-                </a>
-                <a href="custom-works.html" className="dropdown-item">
+                </Link>
+                <Link to="/custom-works" className="dropdown-item">
                   Custom Works
-                </a>
+                </Link>
               </div>
             </div>
             {/* <!--Pages dropdown--> */}
-            <a href="contact.html" className="nav-item nav-link">
+            <Link to="/contact" className="nav-item nav-link">
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

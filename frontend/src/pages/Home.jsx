@@ -1,89 +1,13 @@
 import React from "react";
-import { IoLocationSharp } from "react-icons/io5";
-import { FaPhoneAlt } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { IoIosArrowForward } from "react-icons/io";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import About from "../components/About";
 
 function Home() {
   return (
     <>
       <div>
-        home
-        {/* <!-- Navbar Start --> */}
-        <nav
-          className="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn"
-          data-wow-delay="0.1s"
-        >
-          <a href="index.html" className="navbar-brand d-block d-lg-none">
-            <h1 className="text-primary">Artful Alchemy</h1>
-          </a>
-          <button
-            type="button"
-            className="navbar-toggler"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div
-            className="collapse navbar-collapse justify-content-between py-4 py-lg-0"
-            id="navbarCollapse"
-          >
-            <div className="navbar-nav ms-auto py-0">
-              <a href="index.html" className="nav-item nav-link active">
-                Home
-              </a>
-              <a href="about.html" className="nav-item nav-link">
-                About
-              </a>
-              <a href="service.html" className="nav-item nav-link">
-                Services
-              </a>
-            </div>
-            <a
-              href="index.html"
-              className="navbar-brand bg-primary py-2 px-4 mx-3 d-none d-lg-block"
-            >
-              <h1 className="text-white">Artful Alchemy</h1>
-            </a>
-            <div className="navbar-nav me-auto py-0">
-              {/* <!--<a href="project.html" className="nav-item nav-link">Projects</a>--> */}
-              {/* <!-- Pages dropdown Starts --> */}
-              <div className="nav-item dropdown">
-                <a
-                  href="#"
-                  className="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                >
-                  Pages
-                </a>
-                <div className="dropdown-menu rounded-0 shadow-sm border-0 m-0">
-                  <a href="pencil-portrait.html" className="dropdown-item">
-                    Pencil Portrait
-                  </a>
-                  <a href="color-portrait.html" className="dropdown-item">
-                    Colour Portraits
-                  </a>
-                  <a href="caricature.html" className="dropdown-item">
-                    Caricatures
-                  </a>
-                  <a href="custom-works.html" className="dropdown-item">
-                    Custom Works
-                  </a>
-                </div>
-              </div>
-              {/* <!--Pages dropdown--> */}
-              <a href="contact.html" className="nav-item nav-link">
-                Contact
-              </a>
-            </div>
-          </div>
-        </nav>
-        {/* <!-- Navbar End --> */}
+        <Navbar />
         {/* <!-- Header Start --> */}
         <div className="container-fluid hero-header bg-light py-5 mb-5">
           <div className="container py-5">
@@ -464,90 +388,7 @@ function Home() {
           </div>
         </div>
         {/* <!-- Testimonial End --> */}
-        {/* <!-- Footer Start --> */}
-        <div
-          className="container-fluid footer position-relative bg-dark text-white-50 mt-5 py-5 px-4 px-lg-5 wow fadeIn"
-          data-wow-delay="0.1s"
-        >
-          <div className="row g-5 py-5">
-            <div className="col-lg-6 pe-lg-5">
-              <a href="index.html" className="navbar-brand">
-                <h1 className="display-5 text-primary">Artful Alchemy</h1>
-              </a>
-              <p>Inspiring Beauty, One Artwork at a Time.</p>
-              <p>
-                <IoLocationSharp />
-                &nbsp; Thondayad, Kozhikode, Kerala
-              </p>
-              <p>
-                <FaPhoneAlt />
-                &nbsp; +91 12345 67890
-              </p>
-              <p>
-                <MdEmail />
-                &nbsp; info@artfulalchemy.com
-              </p>
-              <div className="d-flex justify-content-start mt-4">
-                <FaTwitter />
-                &emsp;
-                <FaFacebook />
-                &emsp;
-                <FaLinkedin />
-                &emsp;
-                <FaSquareInstagram />
-              </div>
-            </div>
-            <div className="col-lg-6 ps-lg-5">
-              <div className="row g-5">
-                <div className="col-sm-6">
-                  <h4 className="text-light mb-4">Quick Links</h4>
-                  <a className="btn btn-link" href="about.html">
-                    <IoIosArrowForward />
-                    About Me
-                  </a>
-                  <a className="btn btn-link" href="contact.html">
-                    <IoIosArrowForward />
-                    Contact Me
-                  </a>
-                  <a className="btn btn-link" href="service.html">
-                    <IoIosArrowForward />
-                    My Services
-                  </a>
-                  {/* <!--<a className="btn btn-link" href="">Terms & Condition</a>
-                        <a className="btn btn-link" href="">Support</a>--> */}
-                </div>
-                <div className="col-sm-6">
-                  <h4 className="text-light mb-4">Popular Links</h4>
-                  <a className="btn btn-link" href="pencil-portrait.html">
-                    <IoIosArrowForward />
-                    Pencil Portraits
-                  </a>
-                  <a className="btn btn-link" href="color-portrait.html">
-                    <IoIosArrowForward />
-                    Colour Portraits
-                  </a>
-                  <a className="btn btn-link" href="caricature.html">
-                    <IoIosArrowForward />
-                    Caricature
-                  </a>
-                  <a className="btn btn-link" href="custom-works.html">
-                    <IoIosArrowForward />
-                    Custom Works
-                  </a>
-                </div>
-                {/* <!--<div className="col-sm-12">
-                        <h4 className="text-light mb-4">Newsletter</h4>
-                        <div className="w-100">
-                            <div className="input-group">
-                                <input type="text" className="form-control border-0 bg-secondary" style="padding: 20px 30px;" placeholder="Your Email Address"><button className="btn btn-primary px-4">Sign Up</button>
-                            </div>
-                        </div>
-                    </div>--> */}
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* <!-- Footer End --> */}
+        <Footer />
       </div>
     </>
   );
