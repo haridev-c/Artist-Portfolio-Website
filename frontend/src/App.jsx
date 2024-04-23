@@ -10,6 +10,7 @@ import ColorPortrait from "./pages/ColorPortrait";
 import PencilPortrait from "./pages/PencilPortrait";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
+import Test from "./pages/Test";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/pencil-portrait" element={<PencilPortrait />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </BrowserRouter>
     </>
