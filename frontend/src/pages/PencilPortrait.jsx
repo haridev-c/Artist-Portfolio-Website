@@ -14,15 +14,18 @@ function PencilPortrait() {
       const { data } = await axios.get(
         "http://localhost:5050/api/products/get-all-products"
       );
-      await console.log(data, "all products");
-      await setAllProducts(data);
-      await setReqProducts(
-        allProducts.filter((product) => product.category === "Pencil Portrait")
+      console.log(data, "all products");
+      setAllProducts(data);
+      setReqProducts(
+        data.filter((product) => product.category === "Pencil Portrait")
       );
-      await console.log(reqProducts, "req products");
+      console.log(
+        data.filter((product) => product.category === "Pencil Portrait"),
+        "req products"
+      );
     }
     fetchData();
-  });
+  }, []); // don't forget the dependency array
 
   return (
     <>
