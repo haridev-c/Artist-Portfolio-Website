@@ -1,7 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Service from "../components/Service";
 
 function Caricature() {
-  return <div>Caricature</div>;
+  const [allProducts, setAllProducts] = useState([]);
+  const [reqProducts, setReqProducts] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const { data } = await axios.get(
+        "http://localhost:5050/api/products/get-all-products"
+      );
+      await console.log(data, "all products");
+      await setAllProducts(data);
+      await setReqProducts(
+        allProducts.filter((product) => product.category === "Caricature")
+      );
+      await console.log(reqProducts, "req products");
+    }
+    fetchData();
+  });
+
+  return (
+    <>
+      <Navbar />
+      <Header service="Caricature" products={reqProducts} />
+      <Service service="Caricature" products={reqProducts} />
+      <Footer />
+    </>
+  );
 }
 
 export default Caricature;

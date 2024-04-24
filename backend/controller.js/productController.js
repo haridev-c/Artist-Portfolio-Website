@@ -7,15 +7,16 @@ const postingProduct = async (req, res) => {
     //create an image model instance
     const product = new Product({
       category: req.body.category,
-      caricatureType: req.body.cariType,
+      customWorks: req.body.customWorks,
       workType: req.body.workType,
       paperSize: req.body.paperSize,
       price: req.body.price,
+      fileName: req.file.filename,
     });
 
     const savedProduct = await product.save();
 
-    savedProduct.imageUrl = `http://localhost:5050/api/products/${savedProduct._id}`;
+    savedProduct.imageUrl = `http://localhost:5050/uploads/${req.file.filename}`;
 
     await savedProduct.save();
 
@@ -27,7 +28,7 @@ const postingProduct = async (req, res) => {
   }
 };
 
-const getProducts = async (req, res) => {
+const getAllProducts = async (req, res) => {
   try {
     const products = await Product.find();
 
@@ -55,4 +56,4 @@ const getSingleImage = async (req, res) => {
   }
 };
 
-module.exports = { postingProduct, getProducts };
+module.exports = { postingProduct, getAllProducts };

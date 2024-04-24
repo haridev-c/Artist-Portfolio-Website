@@ -2,10 +2,11 @@ const mongoose = require("mongoose");
 
 const productSchema = mongoose.Schema({
   category: String,
-  caricatureType: String,
+  customWorks: String,
   workType: String,
   paperSize: String,
   price: Number,
+  fileName: String,
   imageUrl: String,
 });
 

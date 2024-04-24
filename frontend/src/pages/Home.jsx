@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import About from "../components/About";
@@ -102,7 +103,12 @@ function Home() {
                     </div>
                   </div>
                   <div className="text-center p-4">
-                    <h4>Pencil Portraits</h4>
+                    <Link
+                      to="/pencil-portrait"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <h4>Pencil Portraits</h4>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -127,7 +133,12 @@ function Home() {
                     </div>
                   </div>
                   <div className="text-center p-4">
-                    <h4>Colour Portraits</h4>
+                    <Link
+                      to="/color-portrait"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <h4>Colour Portraits</h4>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -152,7 +163,9 @@ function Home() {
                     </div>
                   </div>
                   <div className="text-center p-4">
-                    <h4>Caricature</h4>
+                    <Link to="/caricature" style={{ textDecoration: "none" }}>
+                      <h4>Caricature</h4>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -178,7 +191,9 @@ function Home() {
                     </div>
                   </div>
                   <div className="text-center p-4">
-                    <h4>Customized Works</h4>
+                    <Link to="/custom-works" style={{ textDecoration: "none" }}>
+                      <h4>Customized Works</h4>
+                    </Link>
                   </div>
                 </div>
               </div>

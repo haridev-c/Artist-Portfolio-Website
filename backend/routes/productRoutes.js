@@ -3,10 +3,10 @@ const router = express.Router();
 const upload = require("../middlewares/multerStorage");
 const {
   postingProduct,
-  getProducts,
+  getAllProducts,
 } = require("../controller.js/productController");
 
 router.post("/upload", upload.single("image"), postingProduct);
-router.route("/get-products").get(getProducts);
+router.route("/get-all-products").get(getAllProducts);
 
 module.exports = router;

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Admin() {
-  const [category, setCategory] = useState("pencilPortrait");
+  const [category, setCategory] = useState("Pencil Portrait");
   const [image, setImage] = useState(null);
-  const [cariType, setCariType] = useState("");
-  const [workType, setWorkType] = useState("single");
-  const [paperSize, setPaperSize] = useState("a4");
+  const [customWorks, setCustomWorks] = useState("");
+  const [workType, setWorkType] = useState("Single");
+  const [paperSize, setPaperSize] = useState("A4");
   const [price, setPrice] = useState(0);
 
   const handleSubmit = (e) => {
@@ -14,7 +14,7 @@ function Admin() {
     const formData = new FormData();
     formData.append("image", image);
     formData.append("category", category);
-    formData.append("cariType", cariType);
+    formData.append("customWorks", customWorks);
     formData.append("workType", workType);
     formData.append("paperSize", paperSize);
     formData.append("price", price);
@@ -23,6 +23,7 @@ function Admin() {
       .post("http://localhost:5050/api/products/upload", formData)
       .then((result) => {
         console.log(result);
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -55,10 +56,10 @@ function Admin() {
                     className="form-select"
                     onChange={(e) => setCategory(e.target.value)}
                   >
-                    <option value="pencilPortrait">Pencil Portrait</option>
-                    <option value="colorPortrait">Color Portrait</option>
-                    <option value="caricature">Caricature</option>
-                    <option value="customWorks">Custom Works</option>
+                    <option value="Pencil Portrait">Pencil Portrait</option>
+                    <option value="Color Portrait">Color Portrait</option>
+                    <option value="Caricature">Caricature</option>
+                    <option value="Custom Works">Custom Works</option>
                   </select>
                 </div>
               </div>
@@ -66,7 +67,7 @@ function Admin() {
               <div className="row">
                 <div className="col">
                   <label htmlFor="caricatureType" className="form-label">
-                    Enter caricature type
+                    Enter Custom Work
                   </label>
                 </div>
                 <div className="col">
@@ -74,7 +75,7 @@ function Admin() {
                     type="text"
                     id="caricatureType"
                     className="form-control"
-                    onChange={(e) => setCariType(e.target.value)}
+                    onChange={(e) => setCustomWorks(e.target.value)}
                   />
                 </div>
               </div>
@@ -110,9 +111,11 @@ function Admin() {
                     id="type"
                     onChange={(e) => setWorkType(e.target.value)}
                   >
-                    <option value="single">Single</option>
-                    <option value="couple">Couple</option>
-                    <option value="singleLine">Single Line</option>
+                    <option value="Single">Single</option>
+                    <option value="Couple">Couple</option>
+                    <option value="Single Line Drawing">
+                      Single Line Drawing
+                    </option>
                   </select>
                 </div>
               </div>
@@ -131,9 +134,9 @@ function Admin() {
                     className="form-select"
                     onChange={(e) => setPaperSize(e.target.value)}
                   >
-                    <option value="a4">A4</option>
-                    <option value="a3">A3</option>
-                    <option value="singleLine">SingleLine</option>
+                    <option value="A4">A4</option>
+                    <option value="A3">A3</option>
+                    <option value="Small">Single Line Drawing</option>
                   </select>
                 </div>
               </div>
