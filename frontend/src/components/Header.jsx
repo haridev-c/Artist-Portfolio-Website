@@ -51,14 +51,14 @@ function Header(props) {
                 <div className="col-6 text-end">
                   <img
                     className="img-fluid bg-white p-3 w-100"
-                    src={img1}
+                    src={props.products[0].imageUrl}
                     alt="Pencil Portrait 1"
                   />
                 </div>
                 <div className="col-6">
                   <img
                     className="img-fluid bg-white p-3 w-100"
-                    src={img2}
+                    src={props.products[1].imageUrl}
                     alt="Pencil Portrait 2"
                   />
                 </div>
