@@ -1,26 +1,8 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Header(props) {
-  const [img1, setImg1] = useState("");
-  const [img2, setImg2] = useState("");
-
-  useEffect(() => {
-    async function fetchImageUrl() {
-      if (props.products && props.products.length >= 2) {
-        const temp1 = props.products[0].imageUrl;
-        setImg1(temp1);
-        const temp2 = props.products[1].imageUrl;
-        setImg2(temp2);
-      }
-    }
-
-    fetchImageUrl();
-  }, [props.products]);
-
   return (
     <>
-      {/* <!-- Header Start --> */}
       <div className="container-fluid hero-header bg-light py-5 mb-5">
         <div className="container py-5">
           <div className="row g-5 align-items-center">
@@ -67,7 +49,6 @@ function Header(props) {
           </div>
         </div>
       </div>
-      {/* <!-- Header End --> */}
     </>
   );
 }

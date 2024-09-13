@@ -21,10 +21,9 @@ function ColorPortrait() {
       if (data.filter((product) => product.category === "Color Portrait")) {
         setLoading(false);
       }
-      console.log(reqProducts, "req products");
     }
     fetchData();
-  });
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;

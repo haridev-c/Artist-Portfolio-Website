@@ -21,10 +21,9 @@ function Caricature() {
       if (data.filter((product) => product.category === "Caricature")) {
         setLoading(false);
       }
-      console.log(reqProducts, "req products");
     }
     fetchData();
-  });
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
