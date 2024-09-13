@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import Services from "./pages/Services";
@@ -10,26 +10,22 @@ import ColorPortrait from "./pages/ColorPortrait";
 import PencilPortrait from "./pages/PencilPortrait";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
-import Test from "./pages/Test";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/custom-works" element={<CustomWorks />} />
-          <Route path="/caricature" element={<Caricature />} />
-          <Route path="/color-portrait" element={<ColorPortrait />} />
-          <Route path="/pencil-portrait" element={<PencilPortrait />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/test" element={<Test />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/custom-works" element={<CustomWorks />} />
+        <Route path="/caricature" element={<Caricature />} />
+        <Route path="/color-portrait" element={<ColorPortrait />} />
+        <Route path="/pencil-portrait" element={<PencilPortrait />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
     </>
   );
 }

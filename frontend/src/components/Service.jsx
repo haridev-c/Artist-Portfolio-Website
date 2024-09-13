@@ -1,5 +1,5 @@
-import React from "react";
 import Card from "./Card";
+import propTypes from "prop-types";
 
 function Service(props) {
   return (
@@ -20,5 +20,10 @@ function Service(props) {
     </>
   );
 }
+
+Service.propTypes = {
+  service: propTypes.string.isRequired,
+  products: propTypes.array.isRequired,
+};
 
 export default Service;
