@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Header(props) {
@@ -16,7 +16,7 @@ function Header(props) {
     }
 
     fetchImageUrl();
-  }, [props.products]); // dependency array
+  }, [props.products]);
 
   return (
     <>
