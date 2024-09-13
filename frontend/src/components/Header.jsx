@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import propTypes from "prop-types";
 
 function Header(props) {
   return (
@@ -52,5 +53,10 @@ function Header(props) {
     </>
   );
 }
+
+Header.propTypes = {
+  service: propTypes.string.isRequired,
+  products: propTypes.array.isRequired,
+};
 
 export default Header;
