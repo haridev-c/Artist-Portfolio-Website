@@ -1,7 +1,8 @@
 import { useState } from "react";
 // import { Link } from "react-router-dom";
 import { SquareMenu } from "lucide-react";
-import { ChevronDown } from "lucide-react";
+// import { ChevronDown } from "lucide-react";
+import Pages from "./Pages";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,10 +26,12 @@ function Navbar() {
           </div>
         </div>
         <ul className={`${menuOpen ? "flex" : "hidden"} flex-col`}>
-          <li>Home</li>
-          <li>About</li>
-          <li>Pages</li>
-          <li>Contact</li>
+          <li className="my-3 text-lg">Home</li>
+          <li className="my-3 text-lg">About</li>
+          <li className="my-3 flex text-lg">
+            <Pages view={"mobile"} />
+          </li>
+          <li className="my-3 text-lg">Contact</li>
         </ul>
         {/* Mobile view ends */}
 
@@ -54,7 +57,7 @@ function Navbar() {
         {/* Third section starts */}
         <ul className="hidden items-center sm:flex">
           <li className="text-lightGrey mx-4 flex items-center font-semibold hover:text-black">
-            <>Pages</> <ChevronDown />
+            <Pages view="tab" />
           </li>
           <li className="text-lightGrey mx-4 font-semibold hover:text-black">
             Contact
