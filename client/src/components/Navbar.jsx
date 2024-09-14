@@ -1,4 +1,6 @@
 // import { Link } from "react-router-dom";
+import { SquareMenu } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 function Navbar() {
   return (
@@ -76,10 +78,32 @@ function Navbar() {
     //   {/* <!-- Navbar End --> */}
     // </div>
     <>
-      <nav className="h-20 border border-black flex items-center">
-        <div className="text-blue-500 text-2xl font-bold mx-4">
+      <nav className="sticky top-0 flex h-20 items-center justify-between bg-white px-4 shadow-lg sm:justify-center">
+        <div className="text-primaryBlue text-2xl font-bold sm:hidden">
           Artful Alchemy
         </div>
+        <div className="sm:hidden">
+          <SquareMenu strokeWidth={1} size={32} />
+        </div>
+        <ul className="hidden sm:flex">
+          <li className="text-lightGrey mx-4 font-semibold hover:text-black">
+            Home
+          </li>
+          <li className="text-lightGrey mx-4 font-semibold hover:text-black">
+            About
+          </li>
+        </ul>
+        <div className="bg-primaryBlue mx-8 hidden h-full items-center px-4 text-2xl font-bold text-white sm:flex">
+          Artful Alchemy
+        </div>
+        <ul className="hidden sm:flex">
+          <li className="text-lightGrey mx-4 flex items-center font-semibold hover:text-black">
+            <span>Pages</span> <ChevronDown />
+          </li>
+          <li className="text-lightGrey mx-4 font-semibold hover:text-black">
+            Contact
+          </li>
+        </ul>
       </nav>
     </>
   );
