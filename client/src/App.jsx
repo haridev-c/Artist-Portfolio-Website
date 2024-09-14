@@ -10,8 +10,10 @@ import ColorPortrait from "./pages/ColorPortrait";
 import PencilPortrait from "./pages/PencilPortrait";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
+import axios from "axios";
 
 function App() {
+  axios.defaults.baseURL = "http://localhost:5050";
   return (
     <>
       <Routes>
