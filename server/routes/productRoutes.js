@@ -4,9 +4,9 @@ const upload = require("../middlewares/multerStorage");
 const {
   postingProduct,
   getAllProducts,
-} = require("../controller.js/productController");
+} = require("../controller/productController");
 
 router.post("/upload", upload.single("image"), postingProduct);
-router.route("/get-all-products").get(getAllProducts);
+router.get("/get-all-products", getAllProducts);
 
 module.exports = router;
