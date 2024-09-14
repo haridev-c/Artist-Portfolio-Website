@@ -1,8 +1,10 @@
+import { useState } from "react";
 // import { Link } from "react-router-dom";
 import { SquareMenu } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     // <div>
     //   {/* <!-- Navbar Start --> */}
@@ -79,6 +81,7 @@ function Navbar() {
     // </div>
     <>
       <nav className="sticky top-0 flex h-20 items-center justify-between bg-white px-4 shadow-lg sm:justify-center">
+        {/* Mobile Screen View Starts */}
         <div className="text-primaryBlue text-2xl font-bold sm:hidden">
           Artful Alchemy
         </div>
