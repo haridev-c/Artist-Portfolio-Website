@@ -98,7 +98,7 @@ function Navbar() {
         </div>
         <ul className="hidden sm:flex">
           <li className="text-lightGrey mx-4 flex items-center font-semibold hover:text-black">
-            <span>Pages</span> <ChevronDown />
+            <>Pages</> <ChevronDown />
           </li>
           <li className="text-lightGrey mx-4 font-semibold hover:text-black">
             Contact
