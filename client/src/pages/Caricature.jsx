@@ -11,9 +11,7 @@ function Caricature() {
 
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axios.get(
-        "http://localhost:5050/api/products/get-all-products"
-      );
+      const { data } = await axios.get("/api/products/get-all-products");
       console.log(data, "all products");
       setReqProducts(
         data.filter((product) => product.category === "Caricature")
