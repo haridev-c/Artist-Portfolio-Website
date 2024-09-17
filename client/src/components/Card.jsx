@@ -1,4 +1,3 @@
-import React from "react";
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 
 function Card({ product }) {

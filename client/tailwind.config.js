@@ -8,6 +8,7 @@ export default {
         lightGrey: "#5d5d5d",
         footerBlack: "#212529",
         footerText: "#909294",
+        headerBg: "#f8f9fa",
       },
     },
   },
