@@ -97,25 +97,25 @@ function Footer() {
     //   {/* <!-- Footer End --> */}
     // </div>
     <>
-      <footer className="bg-footerBlack flex flex-col px-4 py-20 sm:flex-row sm:px-16">
+      <footer className="flex flex-col bg-footerBlack px-4 py-20 sm:flex-row sm:px-16">
         {/* First sections - Address and socials */}
         <div className="sm:w-1/2">
           <h1 className="text-3xl text-primaryBlue sm:text-7xl">
             Artful Alchemy
           </h1>
-          <p className="text-footerText my-2">
+          <p className="my-2 text-footerText">
             Inspiring beauty, one artwork at a time
           </p>
-          <p className="text-footerText my-4 flex">
+          <p className="my-4 flex text-footerText">
             <MapPin className="mr-2" /> Thondayad, Kozhikode, Kerala
           </p>
-          <p className="text-footerText my-4 flex">
+          <p className="my-4 flex text-footerText">
             <Phone className="mr-2" /> +91 82816 19805
           </p>
-          <p className="text-footerText my-4 flex">
+          <p className="my-4 flex text-footerText">
             <Mail className="mr-2" /> info@artfulalchemy.in
           </p>
-          <p className="text-footerText flex">
+          <p className="flex text-footerText">
             <Twitter className="mr-2" />
             <Facebook className="mx-2" />
             <Linkedin className="mx-2" />
@@ -125,15 +125,15 @@ function Footer() {
         <div className="my-10 flex text-white sm:my-0 sm:w-1/2">
           {/* Quick Links Section */}
           <div className="w-1/2">
-            <h4 className="text-2xl">Quick Links</h4>
-            <ul className="text-footerText flex flex-col">
-              <li className="flex">
+            <h4 className="mb-4 text-2xl">Quick Links</h4>
+            <ul className="flex flex-col text-footerText">
+              <li className="my-3 flex">
                 <ChevronRight /> About Me
               </li>
-              <li className="flex">
+              <li className="my-3 flex">
                 <ChevronRight /> Contact Me
               </li>
-              <li className="flex">
+              <li className="my-3 flex">
                 <ChevronRight /> My Services
               </li>
             </ul>
@@ -141,18 +141,18 @@ function Footer() {
 
           {/* Popular Links Section */}
           <div className="w-1/2">
-            <h4 className="text-2xl">Popular Links</h4>
-            <ul className="text-footerText flex flex-col">
-              <li className="flex">
+            <h4 className="mb-4 text-2xl">Popular Links</h4>
+            <ul className="flex flex-col text-footerText">
+              <li className="my-3 flex">
                 <ChevronRight /> Pencil Portrait
               </li>
-              <li className="flex">
+              <li className="my-3 flex">
                 <ChevronRight /> Color Portrait
               </li>
-              <li className="flex">
+              <li className="my-3 flex">
                 <ChevronRight /> Caricature
               </li>
-              <li className="flex">
+              <li className="my-3 flex">
                 <ChevronRight /> Custom Works
               </li>
             </ul>
