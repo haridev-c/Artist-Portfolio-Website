@@ -9,6 +9,7 @@ export default {
         footerBlack: "#212529",
         footerText: "#909294",
         headerBg: "#f8f9fa",
+        imageFrame: "#f8f9fa",
       },
     },
   },

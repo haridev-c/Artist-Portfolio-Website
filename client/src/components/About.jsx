@@ -1,80 +1,66 @@
-import React from "react";
-import { BsCheckLg } from "react-icons/bs";
+import { Check } from "lucide-react";
 
 function About() {
   return (
     <>
-      {/* <!-- About Start --> */}
-      <div className="container-xxl py-5">
-        <div className="container">
-          <div className="row g-5">
-            <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div className="row g-3 img-twice position-relative h-100">
-                <div className="col-6">
-                  <img
-                    className="img-fluid bg-light p-3"
-                    src="img/about-1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="col-6 align-self-end">
-                  <img
-                    className="img-fluid bg-light p-3"
-                    src="img/about-2.jpg"
-                    alt=""
-                  />
-                </div>
+      <section className="flex h-[80vh] flex-col bg-white sm:flex-row">
+        {/* Row containing two images */}
+        <div className="p-2 sm:w-1/2">
+          <div className="inline-block h-full w-1/2">
+            <div>
+              <div id="imageFrame" className="bg-imageFrame m-2 p-4">
+                <img src="img/about-1.jpg" alt="" />
               </div>
             </div>
-            <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div className="h-100">
-                <p className="text-primary text-uppercase mb-2">About Me</p>
-                <h1 className="display-6 mb-4">
-                  I'm a Creative And Professional Artist
-                </h1>
-                <p>
-                  In my cozy studio, I blend pigments and whispers of
-                  inspiration. My art is a journey—a fusion of alchemy and
-                  authenticity. With every canvas, I aim to evoke wonder,
-                  provoke thought, and ignite joy. Thank you for joining me on
-                  this artistic adventure. Let’s create magic, one artwork at a
-                  time.
-                </p>
-                <p>
-                  As an artist, I don’t merely paint; I breathe life into
-                  visions. When you commission a piece, you’re not hiring a mere
-                  artist—you’re gaining a collaborator who listens, interprets,
-                  and infuses heart into every stroke. Whether it’s a cherished
-                  portrait, a captivating landscape, or a custom illustration, I
-                  immerse myself in your story. Your satisfaction isn’t just my
-                  goal; it’s my masterpiece. Let’s transform your ideas into
-                  timeless art together.
-                </p>
-                <div className="row g-2 mb-4">
-                  <div className="col-sm-6">
-                    <BsCheckLg />
-                    &nbsp; Quality Arts
-                  </div>
-                  <div className="col-sm-6">
-                    <BsCheckLg />
-                    &nbsp; Custom Works
-                  </div>
-                  <div className="col-sm-6">
-                    <BsCheckLg />
-                    &nbsp; Online Order
-                  </div>
-                  <div className="col-sm-6">
-                    <BsCheckLg />
-                    &nbsp; Home Delivery
-                  </div>
-                </div>
-                {/* <!--<a className="btn btn-primary py-3 px-5" href="">Read More</a>--> */}
+          </div>
+
+          <div className="inline-block h-full w-1/2">
+            <div className="flex flex-col">
+              <div id="imageFrame" className="bg-imageFrame m-2 p-4">
+                <img className="" src="img/about-2.jpg" alt="" />
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* <!-- About End --> */}
+        {/* First section ends */}
+
+        <div className="px-4 sm:w-1/2">
+          <h2 className="my-4 text-primaryBlue">ABOUT ME</h2>
+          <h1 className="my-4 text-4xl font-thin">
+            I&apos;m a Creative And Professional Artist
+          </h1>
+          <p className="my-4 text-justify">
+            In my cozy studio, I blend pigments and whispers of inspiration. My
+            art is a journey—a fusion of alchemy and authenticity. With every
+            canvas, I aim to evoke wonder, provoke thought, and ignite joy.
+            Thank you for joining me on this artistic adventure. Let’s create
+            magic, one artwork at a time.
+          </p>
+          <p className="my-4 text-justify">
+            As an artist, I don’t merely paint; I breathe life into visions.
+            When you commission a piece, you’re not hiring a mere artist—you’re
+            gaining a collaborator who listens, interprets, and infuses heart
+            into every stroke. Whether it’s a cherished portrait, a captivating
+            landscape, or a custom illustration, I immerse myself in your story.
+            Your satisfaction isn’t just my goal; it’s my masterpiece. Let’s
+            transform your ideas into timeless art together.
+          </p>
+          <ul className="flex flex-wrap">
+            <li className="flex w-1/2">
+              <Check className="mx-2" /> Quality Arts
+            </li>
+            <li className="flex w-1/2">
+              <Check className="mx-2" /> Custom Works
+            </li>
+            <li className="flex w-1/2">
+              <Check className="mx-2" /> Online Delivery
+            </li>
+            <li className="flex w-1/2">
+              <Check className="mx-2" /> Home Delivery
+            </li>
+          </ul>
+        </div>
+      </section>
     </>
   );
 }
