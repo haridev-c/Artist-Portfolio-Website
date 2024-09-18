@@ -1,4 +1,3 @@
-import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
@@ -9,7 +8,7 @@ import Caricature from "./pages/Caricature";
 import ColorPortrait from "./pages/ColorPortrait";
 import PencilPortrait from "./pages/PencilPortrait";
 import Login from "./pages/Login";
-import Admin from "./pages/Admin";
+import AdminPage from "./pages/AdminPage";
 import axios from "axios";
 
 function App() {
@@ -26,7 +25,7 @@ function App() {
         <Route path="/color-portrait" element={<ColorPortrait />} />
         <Route path="/pencil-portrait" element={<PencilPortrait />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </>
   );

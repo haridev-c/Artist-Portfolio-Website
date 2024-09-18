@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
-function Admin() {
+function AdminPage() {
   const [category, setCategory] = useState("Pencil Portrait");
   const [image, setImage] = useState(null);
   const [customWorks, setCustomWorks] = useState("");
@@ -32,9 +32,9 @@ function Admin() {
 
   return (
     <>
-      <div className="container text-center mt-5">
+      <div className="container mt-5 text-center">
         <h1>Admin Page</h1>
-        <div className="container mt-3 border ">
+        <div className="container mt-3 border">
           <h4 className="m-4">Add a New Product</h4>
 
           {/* Start of Form */}
@@ -42,7 +42,7 @@ function Admin() {
             <div className="text-start">
               {/* Select the category of product */}
               <div className="row align-items-center">
-                <div className="col ">
+                <div className="col">
                   <label
                     htmlFor="selectCategory"
                     className="form-label align-middle"
@@ -173,4 +173,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default AdminPage;

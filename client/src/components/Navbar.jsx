@@ -55,7 +55,10 @@ function Navbar() {
         {/* First section ends */}
 
         {/* Second section starts */}
-        <Link className="mx-8 hidden items-center bg-primaryBlue px-4 text-2xl font-bold text-white sm:flex">
+        <Link
+          to={"/"}
+          className="mx-8 hidden items-center bg-primaryBlue px-4 text-2xl font-bold text-white sm:flex"
+        >
           Artful Alchemy
         </Link>
         {/* Second section ends */}

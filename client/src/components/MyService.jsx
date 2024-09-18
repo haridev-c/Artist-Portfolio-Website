@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function MyService() {
   return (
     <section className="flex flex-col items-center bg-imageFrame py-10">
@@ -7,7 +9,7 @@ function MyService() {
       </h2>
       <div className="flex w-full flex-col sm:flex-row sm:justify-around">
         {/* Works Categories */}
-        <div>
+        <Link to={"/pencil-portrait"}>
           <div className="bg-white p-4 pb-8 sm:h-[400px]">
             <img
               className="h-full w-full object-cover"
@@ -18,9 +20,9 @@ function MyService() {
           <p className="bg-white text-center text-2xl font-bold text-primaryBlue">
             Pencil Portraits
           </p>
-        </div>
+        </Link>
 
-        <div>
+        <Link to={"/color-portrait"}>
           <div className="bg-white p-4 pb-8 sm:h-[400px]">
             <img
               className="h-full w-full object-cover"
@@ -31,9 +33,9 @@ function MyService() {
           <p className="bg-white text-center text-2xl font-bold text-primaryBlue">
             Color Portraits
           </p>
-        </div>
+        </Link>
 
-        <div>
+        <Link to={"/custom-works"}>
           <div className="bg-white p-4 pb-8 sm:h-[400px]">
             <img
               className="h-full w-full object-cover"
@@ -44,9 +46,9 @@ function MyService() {
           <p className="bg-white text-center text-2xl font-bold text-primaryBlue">
             Custom Works
           </p>
-        </div>
+        </Link>
 
-        <div>
+        <Link to={"/caricature"}>
           <div className="bg-white p-4 pb-8 sm:h-[400px]">
             <img
               src="img/caricature/single.jpg"
@@ -57,7 +59,7 @@ function MyService() {
           <p className="bg-white text-center text-2xl font-bold text-primaryBlue">
             Caricature
           </p>
-        </div>
+        </Link>
       </div>
     </section>
   );

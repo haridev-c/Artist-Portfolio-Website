@@ -1,8 +1,6 @@
-// import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import About from "../components/About";
-// import Testimonials from "../components/Testimonials";
 import MyService from "../components/MyService";
 
 function Home() {
@@ -62,9 +60,9 @@ function Home() {
 
         {/* <!-- Header End --> */}
         <About />
+
         <MyService />
 
-        {/* <Testimonials /> */}
         <Footer />
       </div>
     </>
