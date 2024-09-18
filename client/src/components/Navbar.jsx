@@ -37,7 +37,9 @@ function Navbar() {
           <li className="my-3 flex text-lg">
             <PagesDropDown view={"mobile"} />
           </li>
-          <li className="my-3 text-lg">Contact</li>
+          <li className="my-3 text-lg">
+            <Link to={"/contact"}>Contact</Link>
+          </li>
         </ul>
         {/* Mobile view ends */}
 
