@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SquareMenu } from "lucide-react";
-import Pages from "./Pages";
+import PagesDropDown from "./PagesDropDown";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,7 +35,7 @@ function Navbar() {
             <Link to={"/about"}>About</Link>
           </li>
           <li className="my-3 flex text-lg">
-            <Pages view={"mobile"} />
+            <PagesDropDown view={"mobile"} />
           </li>
           <li className="my-3 text-lg">Contact</li>
         </ul>
@@ -66,7 +66,7 @@ function Navbar() {
         {/* Third section starts */}
         <ul className="hidden items-center sm:flex">
           <li className="mx-4 flex items-center font-semibold text-lightGrey hover:text-black">
-            <Pages view="tab" />
+            <PagesDropDown view="tab" />
           </li>
           <li className="mx-4 font-semibold text-lightGrey hover:text-black">
             <Link to={"/contact"}>Contact</Link>

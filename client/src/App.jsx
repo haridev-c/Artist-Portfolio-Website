@@ -1,13 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
-import CustomWorks from "./pages/CustomWorks";
-import Caricature from "./pages/Caricature";
-import ColorPortrait from "./pages/ColorPortrait";
-import PencilPortrait from "./pages/PencilPortrait";
-import Login from "./pages/Login";
+import ContactPage from "./pages/ContactPage";
+import CustomWorksPage from "./pages/CustomWorksPage";
+import CaricaturePage from "./pages/CaricaturePage";
+import ColorPortraitPage from "./pages/ColorPortraitPage";
+import PencilPortraitPage from "./pages/PencilPortraitPage";
+import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
 import axios from "axios";
 
@@ -16,15 +15,14 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/custom-works" element={<CustomWorks />} />
-        <Route path="/caricature" element={<Caricature />} />
-        <Route path="/color-portrait" element={<ColorPortrait />} />
-        <Route path="/pencil-portrait" element={<PencilPortrait />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/custom-works" element={<CustomWorksPage />} />
+        <Route path="/caricature" element={<CaricaturePage />} />
+        <Route path="/color-portrait" element={<ColorPortraitPage />} />
+        <Route path="/pencil-portrait" element={<PencilPortraitPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </>

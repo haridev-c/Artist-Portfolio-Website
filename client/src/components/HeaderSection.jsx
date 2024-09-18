@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
 
-function Header({ service, products }) {
+function HeaderSection({ service, products }) {
   return (
     <>
-      <section className="bg-headerBg flex min-h-[50vh] flex-col p-2 sm:flex-row">
+      <section className="flex min-h-[50vh] flex-col bg-headerBg p-2 sm:flex-row">
         <div className="flex w-1/2 flex-col justify-center sm:p-14">
           <h1 className="my-6 text-5xl font-light">{service}</h1>
           <p className="text-xl text-lightGrey">
@@ -35,9 +35,9 @@ function Header({ service, products }) {
   );
 }
 
-Header.propTypes = {
+HeaderSection.propTypes = {
   service: propTypes.string.isRequired,
   products: propTypes.array.isRequired,
 };
 
-export default Header;
+export default HeaderSection;

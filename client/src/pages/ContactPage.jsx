@@ -1,12 +1,11 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-function Contact() {
+function ContactPage() {
   return (
     <>
       <Navbar />
       {/* <!-- Header Start --> */}
-
       <section className="flex min-h-[50vh] flex-col bg-headerBg sm:flex-row">
         <div className="my-8 flex flex-col justify-center px-6">
           <h2 className="font-bold text-primaryBlue">
@@ -36,7 +35,7 @@ function Contact() {
           </div>
         </div>
       </section>
-
+      Page
       <section className="flex min-h-screen flex-col items-center p-4">
         <h1 className="my-10 text-primaryBlue">CONTACT ME</h1>
         <h4 className="text-center text-4xl font-thin">
@@ -67,7 +66,6 @@ function Contact() {
           </button>
         </form>
       </section>
-
       {/* <!-- Google Map Start --> */}
       <div className="w-full sm:p-4">
         <iframe
@@ -80,10 +78,9 @@ function Contact() {
         ></iframe>
       </div>
       {/* <!-- Google Map End --> */}
-
       <Footer />
     </>
   );
 }
 
-export default Contact;
+export default ContactPage;

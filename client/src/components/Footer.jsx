@@ -1,12 +1,3 @@
-// import { Link } from "react-router-dom";
-// import { IoLocationSharp } from "react-icons/io5";
-// import { FaPhoneAlt } from "react-icons/fa";
-// import { MdEmail } from "react-icons/md";
-// import { FaTwitter } from "react-icons/fa";
-// import { FaFacebook } from "react-icons/fa";
-// import { FaLinkedin } from "react-icons/fa";
-// import { FaSquareInstagram } from "react-icons/fa6";
-// import { IoIosArrowForward } from "react-icons/io";
 import { MapPin } from "lucide-react";
 import { Phone } from "lucide-react";
 import { Mail } from "lucide-react";
@@ -15,87 +6,10 @@ import { Linkedin } from "lucide-react";
 import { Facebook } from "lucide-react";
 import { Instagram } from "lucide-react";
 import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    // <div>
-    //   {/* <!-- Footer Start --> */}
-    //   <div
-    //     className="container-fluid footer position-relative bg-dark text-white-50 px-lg-5 wow fadeIn mt-5 px-4 py-5"
-    //     data-wow-delay="0.1s"
-    //   >
-    //     <div className="row g-5 py-5">
-    //       <div className="col-lg-6 pe-lg-5">
-    //         <Link to="/" className="navbar-brand">
-    //           <h1 className="display-5 text-primary">Artful Alchemy</h1>
-    //         </Link>
-    //         <p>Inspiring Beauty, One Artwork at a Time.</p>
-    //         <p>
-    //           <IoLocationSharp />
-    //           &nbsp; Thondayad, Kozhikode, Kerala
-    //         </p>
-    //         <p>
-    //           <FaPhoneAlt />
-    //           &nbsp; +91 12345 67890
-    //         </p>
-    //         <p>
-    //           <MdEmail />
-    //           &nbsp; info@artfulalchemy.com
-    //         </p>
-    //         <div className="d-flex justify-content-start mt-4">
-    //           <FaTwitter />
-    //           &emsp;
-    //           <FaFacebook />
-    //           &emsp;
-    //           <FaLinkedin />
-    //           &emsp;
-    //           <FaSquareInstagram />
-    //         </div>
-    //       </div>
-    //       <div className="col-lg-6 ps-lg-5">
-    //         <div className="row g-5">
-    //           <div className="col-sm-6">
-    //             <h4 className="text-light mb-4">Quick Links</h4>
-    //             <Link className="btn btn-link" to="/about">
-    //               <IoIosArrowForward />
-    //               About Me
-    //             </Link>
-    //             <Link className="btn btn-link" to="/contact">
-    //               <IoIosArrowForward />
-    //               Contact Me
-    //             </Link>
-    //             <Link className="btn btn-link" to="/services">
-    //               <IoIosArrowForward />
-    //               My Services
-    //             </Link>
-    //             {/* <!--<a className="btn btn-link" href="">Terms & Condition</a>
-    //                     <a className="btn btn-link" href="">Support</a>--> */}
-    //           </div>
-    //           <div className="col-sm-6">
-    //             <h4 className="text-light mb-4">Popular Links</h4>
-    //             <Link className="btn btn-link" to="/pencil-portrait">
-    //               <IoIosArrowForward />
-    //               Pencil Portraits
-    //             </Link>
-    //             <Link className="btn btn-link" to="/color-portrait">
-    //               <IoIosArrowForward />
-    //               Colour Portraits
-    //             </Link>
-    //             <Link className="btn btn-link" to="/caricature">
-    //               <IoIosArrowForward />
-    //               Caricature
-    //             </Link>
-    //             <Link className="btn btn-link" to="/custom-works">
-    //               <IoIosArrowForward />
-    //               Custom Works
-    //             </Link>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    //   {/* <!-- Footer End --> */}
-    // </div>
     <>
       <footer className="flex flex-col bg-footerBlack px-4 py-20 sm:flex-row sm:px-16">
         {/* First sections - Address and socials */}
@@ -106,20 +20,20 @@ function Footer() {
           <p className="my-2 text-footerText">
             Inspiring beauty, one artwork at a time
           </p>
-          <p className="my-4 flex text-footerText">
-            <MapPin className="mr-2" /> Thondayad, Kozhikode, Kerala
+          <p className="my-4 flex items-center text-footerText">
+            <MapPin size={16} className="mr-2" /> Thondayad, Kozhikode, Kerala
           </p>
-          <p className="my-4 flex text-footerText">
-            <Phone className="mr-2" /> +91 82816 19805
+          <p className="my-4 flex items-center text-footerText">
+            <Phone size={16} className="mr-2" /> +91 82816 19805
           </p>
-          <p className="my-4 flex text-footerText">
-            <Mail className="mr-2" /> info@artfulalchemy.in
+          <p className="my-4 flex items-center text-footerText">
+            <Mail size={16} className="mr-2" /> info@artfulalchemy.in
           </p>
           <p className="flex text-footerText">
-            <Twitter className="mr-2" />
-            <Facebook className="mx-2" />
-            <Linkedin className="mx-2" />
-            <Instagram className="mx-2" />
+            <Twitter size={16} className="mr-2" />
+            <Facebook size={16} className="mx-2" />
+            <Linkedin size={16} className="mx-2" />
+            <Instagram size={16} className="mx-2" />
           </p>
         </div>
         <div className="my-10 flex text-white sm:my-0 sm:w-1/2">
@@ -127,14 +41,15 @@ function Footer() {
           <div className="w-1/2">
             <h4 className="mb-4 text-2xl">Quick Links</h4>
             <ul className="flex flex-col text-footerText">
-              <li className="my-3 flex">
-                <ChevronRight /> About Me
+              <li className="my-3">
+                <Link className="flex" to={"/about"}>
+                  <ChevronRight /> About Me
+                </Link>
               </li>
-              <li className="my-3 flex">
-                <ChevronRight /> Contact Me
-              </li>
-              <li className="my-3 flex">
-                <ChevronRight /> My Services
+              <li className="my-3">
+                <Link className="flex" to={"/contact"}>
+                  <ChevronRight /> Contact Me
+                </Link>
               </li>
             </ul>
           </div>
@@ -143,17 +58,25 @@ function Footer() {
           <div className="w-1/2">
             <h4 className="mb-4 text-2xl">Popular Links</h4>
             <ul className="flex flex-col text-footerText">
-              <li className="my-3 flex">
-                <ChevronRight /> Pencil Portrait
+              <li className="my-3">
+                <Link className="flex" to={"/pencil-portrait"}>
+                  <ChevronRight /> Pencil Portrait
+                </Link>
               </li>
-              <li className="my-3 flex">
-                <ChevronRight /> Color Portrait
+              <li className="my-3">
+                <Link className="flex" to={"/color-portrait"}>
+                  <ChevronRight /> Color Portrait
+                </Link>
               </li>
-              <li className="my-3 flex">
-                <ChevronRight /> Caricature
+              <li className="my-3">
+                <Link className="flex" to={"/caricature"}>
+                  <ChevronRight /> Caricature
+                </Link>
               </li>
-              <li className="my-3 flex">
-                <ChevronRight /> Custom Works
+              <li className="my-3">
+                <Link className="flex" to={"/custom-works"}>
+                  <ChevronRight /> Custom Works
+                </Link>
               </li>
             </ul>
           </div>

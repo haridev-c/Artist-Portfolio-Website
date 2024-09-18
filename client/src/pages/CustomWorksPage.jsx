@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Service from "../components/Service";
+import HeaderSection from "../components/HeaderSection";
+import ServiceSection from "../components/ServiceSection";
 
-function PencilPortrait() {
+function CustomWorksPage() {
   const [reqProducts, setReqProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,15 +14,11 @@ function PencilPortrait() {
       const { data } = await axios.get("/api/products/get-all-products");
       console.log(data, "all products");
       setReqProducts(
-        data.filter((product) => product.category === "Pencil Portrait")
+        data.filter((product) => product.category === "Custom Works"),
       );
-      if (data.filter((product) => product.category === "Pencil Portrait")) {
+      if (data.filter((product) => product.category === "Custom Works")) {
         setLoading(false);
       }
-      console.log(
-        data.filter((product) => product.category === "Pencil Portrait"),
-        "req products"
-      );
     }
     fetchData();
   }, []);
@@ -34,11 +30,11 @@ function PencilPortrait() {
   return (
     <>
       <Navbar />
-      <Header service="Pencil Portraits" products={reqProducts} />
-      <Service service="Pencil Portrait" products={reqProducts} />
+      <HeaderSection service="Custom Works" products={reqProducts} />
+      <ServiceSection service="Custom Work" products={reqProducts} />
       <Footer />
     </>
   );
 }
 
-export default PencilPortrait;
+export default CustomWorksPage;

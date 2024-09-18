@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 import propTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-function Pages({ view }) {
+function PagesDropDown({ view }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   function toggleMenu() {
@@ -59,8 +59,8 @@ function Pages({ view }) {
   );
 }
 
-Pages.propTypes = {
+PagesDropDown.propTypes = {
   view: propTypes.string,
 };
 
-export default Pages;
+export default PagesDropDown;

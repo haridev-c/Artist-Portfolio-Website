@@ -1,7 +1,7 @@
-import Card from "./Card";
+import ServiceCard from "./ServiceCard";
 import propTypes from "prop-types";
 
-function Service({ service, products }) {
+function ServiceSection({ service, products }) {
   return (
     <>
       <section className="my-4 mb-16 flex flex-col items-center">
@@ -9,7 +9,7 @@ function Service({ service, products }) {
         <h1 className="my-4 text-5xl font-thin">{service}</h1>
         <div className="flex w-full flex-wrap justify-around px-2">
           {products.map((product) => (
-            <Card key={product._id} product={product} />
+            <ServiceCard key={product._id} product={product} />
           ))}
         </div>
       </section>
@@ -17,9 +17,9 @@ function Service({ service, products }) {
   );
 }
 
-Service.propTypes = {
+ServiceSection.propTypes = {
   service: propTypes.string.isRequired,
   products: propTypes.array.isRequired,
 };
 
-export default Service;
+export default ServiceSection;

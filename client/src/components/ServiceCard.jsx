@@ -1,7 +1,7 @@
 import propTypes from "prop-types";
 import { IndianRupee } from "lucide-react";
 
-function Card({ product }) {
+function ServiceCard({ product }) {
   return (
     <>
       <div className="m-2 w-full rounded bg-imageFrame px-4 pb-4 sm:max-w-[30%]">
@@ -32,8 +32,8 @@ function Card({ product }) {
   );
 }
 
-Card.propTypes = {
+ServiceCard.propTypes = {
   product: propTypes.object.isRequired,
 };
 
-export default Card;
+export default ServiceCard;

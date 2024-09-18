@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
-import About from "../components/About";
-import Facts from "../components/Facts";
 import Footer from "../components/Footer";
+import FactsSection from "../components/FactsSection";
+import AboutSection from "../components/AboutSection";
 
 function AboutPage() {
   return (
@@ -38,8 +38,8 @@ function AboutPage() {
         </div>
       </section>
 
-      <About />
-      <Facts />
+      <AboutSection />
+      <FactsSection />
       <Footer />
     </>
   );

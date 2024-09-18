@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function MyService() {
+function MyServiceSection() {
   return (
     <section className="flex flex-col items-center bg-imageFrame py-10">
       <h1 className="my-4 text-primaryBlue">MY SERVICES</h1>
@@ -65,4 +65,4 @@ function MyService() {
   );
 }
 
-export default MyService;
+export default MyServiceSection;

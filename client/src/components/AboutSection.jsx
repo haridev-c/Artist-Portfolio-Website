@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
 
-function About() {
+function AboutSection() {
   return (
     <>
       <section className="min-h-[80vh] flex-col bg-white sm:flex sm:flex-row">
@@ -65,4 +65,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutSection;

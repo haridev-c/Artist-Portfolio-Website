@@ -1,9 +1,9 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import About from "../components/About";
-import MyService from "../components/MyService";
+import AboutSection from "../components/AboutSection";
+import MyServiceSection from "../components/MyServiceSection";
 
-function Home() {
+function HomePage() {
   return (
     <>
       <div>
@@ -59,9 +59,9 @@ function Home() {
         </section>
 
         {/* <!-- Header End --> */}
-        <About />
+        <AboutSection />
 
-        <MyService />
+        <MyServiceSection />
 
         <Footer />
       </div>
@@ -69,4 +69,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

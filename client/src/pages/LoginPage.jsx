@@ -1,9 +1,7 @@
-import React from "react";
-
-function Login() {
+function LoginPage() {
   return (
     <>
-      <div className="row ">
+      <div className="row">
         <div className="col-sm-6 mx-auto">
           <div className="container mt-5">
             <div className="card">
@@ -45,4 +43,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginPage;

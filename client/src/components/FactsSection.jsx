@@ -1,4 +1,4 @@
-function Facts() {
+function FactsSection() {
   return (
     <>
       <section className="flex min-h-[80vh] flex-col items-center">
@@ -41,4 +41,4 @@ function Facts() {
   );
 }
 
-export default Facts;
+export default FactsSection;
