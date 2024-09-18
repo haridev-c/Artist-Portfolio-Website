@@ -1,5 +1,3 @@
-import React from "react";
-
 function Facts() {
   return (
     <>
@@ -7,7 +5,7 @@ function Facts() {
       <div className="container-xxl py-5">
         <div className="container">
           <div
-            className="text-center mx-auto wow fadeInUp"
+            className="wow fadeInUp mx-auto text-center"
             data-wow-delay="0.1s"
             style={{ maxWidth: 500 }}
           >
@@ -21,7 +19,7 @@ function Facts() {
               className="col-lg-4 col-md-6 pt-lg-5 wow fadeInUp"
               data-wow-delay="0.1s"
             >
-              <div className="fact-item bg-light text-center h-100 p-5">
+              <div className="fact-item bg-light h-100 p-5 text-center">
                 <h1
                   className="display-2 text-primary mb-3"
                   data-toggle="counter-up"
@@ -39,7 +37,7 @@ function Facts() {
               className="col-lg-4 col-md-6 wow fadeInUp"
               data-wow-delay="0.3s"
             >
-              <div className="fact-item bg-light text-center h-100 p-5">
+              <div className="fact-item bg-light h-100 p-5 text-center">
                 <h1
                   className="display-2 text-primary mb-3"
                   data-toggle="counter-up"
@@ -57,7 +55,7 @@ function Facts() {
               className="col-lg-4 col-md-6 pt-lg-5 wow fadeInUp"
               data-wow-delay="0.5s"
             >
-              <div className="fact-item bg-light text-center h-100 p-5">
+              <div className="fact-item bg-light h-100 p-5 text-center">
                 <h1
                   className="display-2 text-primary mb-3"
                   data-toggle="counter-up"
