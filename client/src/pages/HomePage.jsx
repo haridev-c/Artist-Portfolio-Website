@@ -3,6 +3,12 @@ import Footer from "../components/Footer";
 import AboutSection from "../components/AboutSection";
 import MyServiceSection from "../components/MyServiceSection";
 
+// image imports
+import colorPortrait1 from "../assets/images/color-portrait/color-portrait-1.jpg";
+import colorPortrait3 from "../assets/images/color-portrait/color-portrait-3.jpg";
+import colorPortrait4 from "../assets/images/color-portrait/color-portrait-4.jpg";
+import pencilPortrait4 from "../assets/images/pencil-portraits/pencil-portrait-4.jpg";
+
 function HomePage() {
   return (
     <>
@@ -26,7 +32,7 @@ function HomePage() {
             <div className="flex w-1/2 flex-col items-end">
               <div className="m-3 bg-white p-4">
                 <img
-                  src="img/color-portrait/color-portrait-3.jpg"
+                  src={colorPortrait3}
                   className="w-[150px]"
                   alt="A color portrait"
                 />
@@ -34,7 +40,7 @@ function HomePage() {
               <div className="m-3 bg-white p-4">
                 <img
                   className="w-[100px]"
-                  src="img/color-portrait/color-portrait-4.jpg"
+                  src={colorPortrait4}
                   alt="A color portrait"
                 />
               </div>
@@ -42,7 +48,7 @@ function HomePage() {
             <div className="flex w-1/2 flex-col items-start">
               <div className="m-3 bg-white p-4">
                 <img
-                  src="img/color-portrait/color-portrait-1.jpg"
+                  src={colorPortrait1}
                   className="w-[100px]"
                   alt="A color portrait"
                 />
@@ -50,7 +56,7 @@ function HomePage() {
               <div className="m-3 bg-white p-4">
                 <img
                   className="w-[150px]"
-                  src="img/pencil-portraits/pencil-portrait-4.jpg"
+                  src={pencilPortrait4}
                   alt="A color portrait"
                 />
               </div>

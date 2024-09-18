@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 
+// image imports
+import pencilPortrait1 from "../assets/images/pencil-portraits/pencil-portrait-1.jpg";
+import colorPortrait1 from "../assets/images/color-portrait/color-portrait-1.jpg";
+import customWorks1 from "../assets/images/custom-works/fabric-painting.jpg";
+import caricature1 from "../assets/images/caricature/single.jpg";
+
 function MyServiceSection() {
   return (
     <section className="flex flex-col items-center bg-imageFrame py-10">
@@ -13,7 +19,7 @@ function MyServiceSection() {
           <div className="bg-white p-4 pb-8 sm:h-[400px]">
             <img
               className="h-full w-full object-cover"
-              src="img/pencil-portraits/pencil-portrait-1.jpg"
+              src={pencilPortrait1}
               alt="A Pencil Portrait"
             />
           </div>
@@ -26,7 +32,7 @@ function MyServiceSection() {
           <div className="bg-white p-4 pb-8 sm:h-[400px]">
             <img
               className="h-full w-full object-cover"
-              src="img/color-portrait/color-portrait-1.jpg"
+              src={colorPortrait1}
               alt="A Color Portrait"
             />
           </div>
@@ -39,7 +45,7 @@ function MyServiceSection() {
           <div className="bg-white p-4 pb-8 sm:h-[400px]">
             <img
               className="h-full w-full object-cover"
-              src="img/custom-works/fabric-painting.jpg"
+              src={customWorks1}
               alt=""
             />
           </div>
@@ -51,7 +57,7 @@ function MyServiceSection() {
         <Link to={"/caricature"}>
           <div className="bg-white p-4 pb-8 sm:h-[400px]">
             <img
-              src="img/caricature/single.jpg"
+              src={caricature1}
               className="h-full w-full object-cover"
               alt=""
             />

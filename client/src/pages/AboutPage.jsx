@@ -3,6 +3,10 @@ import Footer from "../components/Footer";
 import FactsSection from "../components/FactsSection";
 import AboutSection from "../components/AboutSection";
 
+// image imports
+import hero1 from "../assets/images/hero-1.jpg";
+import hero2 from "../assets/images/hero-2.jpg";
+
 function AboutPage() {
   return (
     <>
@@ -23,7 +27,7 @@ function AboutPage() {
         <div className="flex w-3/5 items-start justify-center">
           <div className="m-3 w-2/5 bg-white p-4">
             <img
-              src="img/hero-1.jpg"
+              src={hero1}
               className="w-[200px] object-cover sm:h-full sm:w-full"
               alt="A color portrait"
             />
@@ -31,7 +35,7 @@ function AboutPage() {
           <div className="m-3 w-2/5 bg-white p-4">
             <img
               className="w-[200px] object-cover sm:h-full sm:w-full"
-              src="img/hero-2.jpg"
+              src={hero2}
               alt="A color portrait"
             />
           </div>

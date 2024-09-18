@@ -1,5 +1,9 @@
 import { Check } from "lucide-react";
 
+// image imports
+import about1 from "../assets/images/about-1.jpg";
+import about2 from "../assets/images/about-2.jpg";
+
 function AboutSection() {
   return (
     <>
@@ -9,7 +13,7 @@ function AboutSection() {
           <div className="inline-block h-full w-1/2">
             <div>
               <div id="imageFrame" className="m-2 bg-imageFrame p-4">
-                <img src="img/about-1.jpg" alt="" />
+                <img src={about1} alt="" />
               </div>
             </div>
           </div>
@@ -17,7 +21,7 @@ function AboutSection() {
           <div className="inline-block w-1/2">
             <div className="flex flex-col">
               <div id="imageFrame" className="m-2 bg-imageFrame p-4">
-                <img className="" src="img/about-2.jpg" alt="" />
+                <img className="" src={about2} alt="" />
               </div>
             </div>
           </div>
