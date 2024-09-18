@@ -1,6 +1,6 @@
 function MyService() {
   return (
-    <section className="my-10 flex flex-col items-center bg-imageFrame">
+    <section className="flex flex-col items-center bg-imageFrame py-10">
       <h1 className="my-4 text-primaryBlue">MY SERVICES</h1>
       <h2 className="my-6 text-center text-4xl font-thin sm:w-1/3">
         I Provide The Best Professional Artwork In The State

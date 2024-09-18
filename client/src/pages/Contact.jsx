@@ -39,7 +39,7 @@ function Contact() {
       {/* <!-- Header End --> */}
 
       {/* <!-- Contact Start --> */}
-      <div className="container-xxl py-5">
+      {/* <div className="container-xxl py-5">
         <div className="container">
           <div
             className="wow fadeInUp mx-auto text-center"
@@ -52,9 +52,9 @@ function Contact() {
             </h1>
           </div>
           <div className="row g-0 justify-content-center">
-            <div className="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-              {/* <!--<p className="text-center mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>--> */}
-              <form>
+            <div className="col-lg-8 wow fadeInUp" data-wow-delay="0.1s"> */}
+      {/* <!--<p className="text-center mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>--> */}
+      {/* <form>
                 <div className="row g-3">
                   <div className="col-md-6">
                     <div className="form-floating">
@@ -110,24 +110,50 @@ function Contact() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- Contact End --> */}
 
+      <section className="flex min-h-screen flex-col items-center p-4">
+        <h1 className="my-10 text-primaryBlue">CONTACT ME</h1>
+        <h4 className="text-center text-4xl font-thin">
+          If You Have Any Query, Please Contact Me
+        </h4>
+        <form className="my-10 flex w-full flex-col sm:w-3/5">
+          <input
+            type="text"
+            className="my-2 h-16 w-full rounded border p-2"
+            placeholder="Your Name"
+          />
+          <input
+            type="email"
+            className="my-2 h-16 w-full rounded border p-2"
+            placeholder="Your Email"
+          />
+          <input
+            type="text"
+            className="my-2 h-16 w-full rounded border p-2"
+            placeholder="Subject"
+          />
+          <textarea
+            className="my-2 h-60 w-full rounded border p-2"
+            placeholder="Leave a message here"
+          />
+          <button className="my-4 w-1/2 self-center rounded bg-primaryBlue py-4 text-white">
+            Send Message
+          </button>
+        </form>
+      </section>
+
       {/* <!-- Google Map Start --> */}
-      <div
-        className="container-xxl wow fadeInUp px-0 py-5"
-        data-wow-delay="0.1s"
-      >
+      <div className="w-full sm:p-4">
         <iframe
-          className="w-100 mb-n2"
+          className="w-full sm:rounded"
           style={{ height: 450 }}
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7825.812479697363!2d75.80028114164224!3d11.268302305647705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65bfc1eb9a7af%3A0x6d9a47a0bd30b9ca!2sThondayad%2C%20Kozhikode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1708787585830!5m2!1sen!2sin"
-          frameBorder="0"
           allowFullScreen=""
           aria-hidden="false"
           tabIndex="0"
         ></iframe>
-        {/* <!--<iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7825.812479697363!2d75.80028114164224!3d11.268302305647705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65bfc1eb9a7af%3A0x6d9a47a0bd30b9ca!2sThondayad%2C%20Kozhikode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1708787585830!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowFullScreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--> */}
       </div>
       {/* <!-- Google Map End --> */}
 
