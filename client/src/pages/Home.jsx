@@ -62,7 +62,7 @@ function Home() {
         {/* <!-- Header End --> */}
         <About />
         {/* <!-- Service Start --> */}
-        <div className="container-xxl bg-light my-5 py-5">
+        {/* <div className="container-xxl bg-light my-5 py-5">
           <div className="container py-5">
             <div
               className="wow fadeInUp mx-auto mb-5 text-center"
@@ -192,7 +192,8 @@ function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
         {/* <!--Service Ends--> */}
         <Testimonials />
         <Footer />
