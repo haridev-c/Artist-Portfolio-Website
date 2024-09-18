@@ -13,7 +13,7 @@ function Home() {
         {/* <!-- Header Start --> */}
 
         <section className="flex flex-col bg-headerBg sm:flex-row">
-          <div className="my-8 px-6">
+          <div className="my-8 flex flex-col justify-center px-6">
             <h2 className="font-bold text-primaryBlue">
               WELCOME TO ARTFUL ALCHEMY
             </h2>
