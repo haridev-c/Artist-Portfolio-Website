@@ -1,10 +1,3 @@
-.card {
-  width: 300px; /* Fixed width */
-  height: auto; /* Height adjusts to content */
-}
-
-.card-image-top {
-  width: 100%; /* Responsive image width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover the container without losing aspect ratio */
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

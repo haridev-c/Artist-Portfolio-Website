@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Service from "../components/Service";
+import ServiceSection from "../components/ServiceSection";
+import HeaderSection from "../components/HeaderSection";
 
-function CustomWorks() {
+function CaricaturePage() {
   const [reqProducts, setReqProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,15 +14,14 @@ function CustomWorks() {
       const { data } = await axios.get("/api/products/get-all-products");
       console.log(data, "all products");
       setReqProducts(
-        data.filter((product) => product.category === "Custom Works")
+        data.filter((product) => product.category === "Caricature"),
       );
-      if (data.filter((product) => product.category === "Custom Works")) {
+      if (data.filter((product) => product.category === "Caricature")) {
         setLoading(false);
       }
-      console.log(reqProducts, "req products");
     }
     fetchData();
-  });
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -31,11 +30,11 @@ function CustomWorks() {
   return (
     <>
       <Navbar />
-      <Header service="Custom Works" products={reqProducts} />
-      <Service service="Custom Work" products={reqProducts} />
+      <HeaderSection service="Caricature" products={reqProducts} />
+      <ServiceSection service="Caricature" products={reqProducts} />
       <Footer />
     </>
   );
 }
 
-export default CustomWorks;
+export default CaricaturePage;
