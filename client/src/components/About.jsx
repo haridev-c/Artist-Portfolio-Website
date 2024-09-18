@@ -3,20 +3,20 @@ import { Check } from "lucide-react";
 function About() {
   return (
     <>
-      <section className="flex h-[80vh] flex-col bg-white sm:flex-row">
+      <section className="min-h-[80vh] flex-col bg-white sm:flex sm:flex-row">
         {/* Row containing two images */}
         <div className="p-2 sm:w-1/2">
           <div className="inline-block h-full w-1/2">
             <div>
-              <div id="imageFrame" className="bg-imageFrame m-2 p-4">
+              <div id="imageFrame" className="m-2 bg-imageFrame p-4">
                 <img src="img/about-1.jpg" alt="" />
               </div>
             </div>
           </div>
 
-          <div className="inline-block h-full w-1/2">
+          <div className="inline-block w-1/2">
             <div className="flex flex-col">
-              <div id="imageFrame" className="bg-imageFrame m-2 p-4">
+              <div id="imageFrame" className="m-2 bg-imageFrame p-4">
                 <img className="" src="img/about-2.jpg" alt="" />
               </div>
             </div>
@@ -45,7 +45,7 @@ function About() {
             Your satisfaction isn’t just my goal; it’s my masterpiece. Let’s
             transform your ideas into timeless art together.
           </p>
-          <ul className="flex flex-wrap">
+          <ul className="mb-4 flex flex-wrap">
             <li className="flex w-1/2">
               <Check className="mx-2" /> Quality Arts
             </li>

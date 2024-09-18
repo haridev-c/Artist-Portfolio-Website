@@ -4,7 +4,7 @@ import { IndianRupee } from "lucide-react";
 function Card({ product }) {
   return (
     <>
-      <div className="m-2 w-full rounded bg-lightGrey px-4 pb-4 sm:max-w-[30%]">
+      <div className="m-2 w-full rounded bg-imageFrame px-4 pb-4 sm:max-w-[30%]">
         <p className="my-2 text-center text-lg font-medium">
           {product.component === "Custom Works"
             ? product.customWorks
