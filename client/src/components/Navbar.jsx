@@ -31,7 +31,9 @@ function Navbar() {
           <li className="my-3 text-lg">
             <Link to={"/"}>Home</Link>
           </li>
-          <li className="my-3 text-lg">About</li>
+          <li className="my-3 text-lg">
+            <Link to={"/about"}>About</Link>
+          </li>
           <li className="my-3 flex text-lg">
             <Pages view={"mobile"} />
           </li>
@@ -44,18 +46,18 @@ function Navbar() {
         {/* First section starts */}
         <ul className="hidden items-center sm:flex">
           <li className="mx-4 font-semibold text-lightGrey hover:text-black">
-            Home
+            <Link to={"/"}>Home</Link>
           </li>
           <li className="mx-4 font-semibold text-lightGrey hover:text-black">
-            About
+            <Link to={"/about"}>About</Link>
           </li>
         </ul>
         {/* First section ends */}
 
         {/* Second section starts */}
-        <div className="mx-8 hidden items-center bg-primaryBlue px-4 text-2xl font-bold text-white sm:flex">
+        <Link className="mx-8 hidden items-center bg-primaryBlue px-4 text-2xl font-bold text-white sm:flex">
           Artful Alchemy
-        </div>
+        </Link>
         {/* Second section ends */}
 
         {/* Third section starts */}
@@ -64,7 +66,7 @@ function Navbar() {
             <Pages view="tab" />
           </li>
           <li className="mx-4 font-semibold text-lightGrey hover:text-black">
-            Contact
+            <Link to={"/contact"}>Contact</Link>
           </li>
         </ul>
         {/* Third section ends */}
