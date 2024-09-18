@@ -35,7 +35,6 @@ function ContactPage() {
           </div>
         </div>
       </section>
-      Page
       <section className="flex min-h-screen flex-col items-center p-4">
         <h1 className="my-10 text-primaryBlue">CONTACT ME</h1>
         <h4 className="text-center text-4xl font-thin">
