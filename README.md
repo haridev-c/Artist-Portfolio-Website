@@ -1,5 +1,3 @@
-Artful Alchemy
-
 # Artful Alchemy
 
 Artful Alchemy is a web application built with React and Vite for the frontend and Express.js for the backend. This project showcases an art studio based in Kerala, featuring various artworks and services.
