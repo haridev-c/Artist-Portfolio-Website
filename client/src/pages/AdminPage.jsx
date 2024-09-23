@@ -1,3 +1,5 @@
+// Desc: Admin page to upload products to the database
+
 import axios from "axios";
 import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
@@ -26,7 +28,7 @@ import {
 const formSchema = z.object({
   category: z.string({ required_error: "Category is required" }),
   customWorks: z.string().optional(),
-  file: z
+  image: z
     .instanceof(FileList)
     .refine((file) => file?.length == 1, "File is required."),
   paperSize: z.string().optional(),
@@ -41,45 +43,40 @@ const formSchema = z.object({
     }),
 });
 
+// AdminPage component
 function AdminPage() {
+  // Initialize the form
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       category: "",
       customWorks: "",
-      file: undefined,
+      image: undefined,
       paperSize: "",
       price: "",
     },
   });
-
+  // Watch the category field
   const category = useWatch({ control: form.control, name: "category" });
 
-  const fileRef = form.register("file");
+  const onSubmit = async (data) => {
+    try {
+      console.log(data);
+      // Create a FormData object to send the file
+      const formData = new FormData();
+      formData.append("category", data.category);
+      formData.append("customWorks", data.customWorks);
+      formData.append("image", data.image[0]);
+      formData.append("paperSize", data.paperSize);
+      formData.append("price", data.price);
 
-  const onSubmit = (data) => {
-    console.log(data);
-
-    const formData = new FormData();
-    formData.append("category", data.category);
-    formData.append("customWorks", data.customWorks);
-    formData.append("file", data.file[0]);
-    formData.append("paperSize", data.paperSize);
-    formData.append("price", data.price);
-
-    axios
-      .post("/api/products/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((result) => {
-        console.log(result);
-        form.reset();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      const response = await axios.post("/api/products/upload", formData);
+      console.log(response.data);
+      form.reset();
+    } catch (error) {
+      console.log("Error submitting the form");
+      console.error(error);
+    }
   };
 
   return (
@@ -88,13 +85,13 @@ function AdminPage() {
         Admin Page
       </h1>
 
-      {/* Shadcn form */}
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="m-auto space-y-8 px-6 sm:w-1/2"
           encType="multipart/form-data"
         >
+          {/* Category selection */}
           <FormField
             control={form.control}
             name="category"
@@ -122,6 +119,8 @@ function AdminPage() {
               </FormItem>
             )}
           />
+
+          {/* Only show if custom works category is selected */}
           {category === "Custom Works" && (
             <FormField
               control={form.control}
@@ -138,9 +137,10 @@ function AdminPage() {
             />
           )}
 
+          {/* Image upload */}
           <FormField
             control={form.control}
-            name="file"
+            name="image"
             render={() => (
               <FormItem>
                 <FormLabel>Upload Image</FormLabel>
@@ -148,7 +148,7 @@ function AdminPage() {
                   <Input
                     placeholder="Upload image file"
                     type="file"
-                    {...fileRef}
+                    {...form.register("image")}
                   />
                 </FormControl>
                 <FormMessage />
@@ -156,6 +156,9 @@ function AdminPage() {
             )}
           />
 
+          {/* Paper size selection
+          Dont show if custom works category is selected
+          */}
           {category !== "Custom Works" && (
             <FormField
               control={form.control}
@@ -181,6 +184,7 @@ function AdminPage() {
             />
           )}
 
+          {/* Price input */}
           <FormField
             control={form.control}
             name="price"
