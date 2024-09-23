@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -52,6 +52,8 @@ function AdminPage() {
       price: "",
     },
   });
+
+  const category = useWatch({ control: form.control, name: "category" });
 
   const fileRef = form.register("file");
 
@@ -120,20 +122,21 @@ function AdminPage() {
               </FormItem>
             )}
           />
-
-          <FormField
-            control={form.control}
-            name="customWorks"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Enter custom work type</FormLabel>
-                <FormControl>
-                  <Input placeholder="Custom work type" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          {category === "Custom Works" && (
+            <FormField
+              control={form.control}
+              name="customWorks"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Enter custom work type</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Custom work type" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          )}
 
           <FormField
             control={form.control}
@@ -153,28 +156,30 @@ function AdminPage() {
             )}
           />
 
-          <FormField
-            control={form.control}
-            name="paperSize"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Paper Size</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select a paper size" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="A4">A4</SelectItem>
-                    <SelectItem value="A3">A3</SelectItem>
-                    <SelectItem value="Small">Single Line Drawing</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          {category !== "Custom Works" && (
+            <FormField
+              control={form.control}
+              name="paperSize"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Paper Size</FormLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a paper size" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="A4">A4</SelectItem>
+                      <SelectItem value="A3">A3</SelectItem>
+                      <SelectItem value="Small">Single Line Drawing</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          )}
 
           <FormField
             control={form.control}
