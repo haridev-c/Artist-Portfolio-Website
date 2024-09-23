@@ -25,23 +25,50 @@ import {
 } from "@/components/ui/select";
 
 // Zod schema definition
-const formSchema = z.object({
-  category: z.string({ required_error: "Category is required" }),
-  customWorks: z.string().optional(),
-  image: z
-    .instanceof(FileList)
-    .refine((file) => file?.length == 1, "File is required."),
-  paperSize: z.string().optional(),
-  price: z
-    .string()
-    .refine((val) => !isNaN(parseFloat(val)), {
-      message: "Price must be a valid number",
-    })
-    .transform((val) => parseFloat(val))
-    .refine((val) => val <= 10000, {
-      message: "Price must be less than 10000",
-    }),
-});
+const formSchema = z
+  .object({
+    category: z.string({ required_error: "Category is required" }),
+    customWorks: z.string().optional(),
+    image: z
+      .instanceof(FileList)
+      .refine((file) => file?.length == 1, "File is required."),
+    paperSize: z.string().optional(),
+    price: z
+      .string()
+      .refine((val) => !isNaN(parseFloat(val)), {
+        message: "Price must be a valid number",
+      })
+      .transform((val) => parseFloat(val))
+      .refine((val) => val <= 10000, {
+        message: "Price must be less than 10,000",
+      }),
+  })
+  .refine(
+    (data) => {
+      // Custom works category must have customWorks field
+      if (data.category === "Custom Works") {
+        return data.customWorks !== "";
+      }
+      return true;
+    },
+    {
+      message: "Please enter a custom work type",
+      path: ["customWorks"],
+    },
+  )
+  .refine(
+    (data) => {
+      // Paper size must be selected for all categories except Custom Works
+      if (data.category !== "Custom Works") {
+        return data.paperSize !== "";
+      }
+      return true;
+    },
+    {
+      message: "Please select a paper size",
+      path: ["paperSize"],
+    },
+  );
 
 // AdminPage component
 function AdminPage() {
