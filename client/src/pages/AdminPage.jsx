@@ -138,16 +138,13 @@ function AdminPage() {
           <FormField
             control={form.control}
             name="file"
-            render={({ field }) => (
+            render={() => (
               <FormItem>
                 <FormLabel>Upload Image</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Upload image file"
                     type="file"
-                    onChange={(event) => {
-                      field.onChange(event.target?.files?.[0] ?? undefined);
-                    }}
                     {...fileRef}
                   />
                 </FormControl>
