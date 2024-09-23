@@ -23,6 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
 // Zod schema definition
 const formSchema = z
@@ -86,6 +87,8 @@ function AdminPage() {
   // Watch the category field
   const category = useWatch({ control: form.control, name: "category" });
 
+  const { toast } = useToast();
+
   const onSubmit = async (data) => {
     try {
       console.log(data);
@@ -99,6 +102,9 @@ function AdminPage() {
 
       const response = await axios.post("/api/products/upload", formData);
       console.log(response.data);
+      toast({
+        title: "Form submitted succesfully",
+      });
       form.reset();
     } catch (error) {
       console.log("Error submitting the form");

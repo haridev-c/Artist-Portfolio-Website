@@ -1,4 +1,10 @@
 import { Route, Routes } from "react-router-dom";
+import axios from "axios";
+
+// shadcn imports
+import { Toaster } from "@/components/ui/toaster";
+
+// page imports
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
@@ -8,7 +14,6 @@ import ColorPortraitPage from "./pages/ColorPortraitPage";
 import PencilPortraitPage from "./pages/PencilPortraitPage";
 import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
-import axios from "axios";
 
 function App() {
   axios.defaults.baseURL = "http://localhost:5050";
@@ -25,6 +30,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
+      <Toaster />
     </>
   );
 }
