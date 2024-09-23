@@ -90,7 +90,7 @@ function AdminPage() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="m-auto w-1/2 space-y-8"
+          className="m-auto space-y-8 px-6 sm:w-1/2"
           encType="multipart/form-data"
         >
           <FormField
@@ -193,7 +193,9 @@ function AdminPage() {
             )}
           />
 
-          <Button type="submit">Submit</Button>
+          <Button className="w-full" type="submit">
+            Submit
+          </Button>
         </form>
       </Form>
     </>
