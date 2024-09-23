@@ -6,7 +6,7 @@ const {
   getAllProducts,
 } = require("../controller/productController");
 
-router.post("/upload", upload.single("image"), postingProduct);
+router.post("/upload", upload.single("file"), postingProduct);
 router.get("/get-all-products", getAllProducts);
 
 module.exports = router;

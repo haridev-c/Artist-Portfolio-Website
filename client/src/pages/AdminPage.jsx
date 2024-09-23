@@ -1,13 +1,59 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+// Shadcn imports
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+// Zod schema definition
+const formSchema = z.object({
+  category: z.string({ required_error: "Category is required" }),
+  customWorks: z.string().optional(),
+  file: z
+    .instanceof(FileList)
+    .refine((file) => file?.length == 1, "File is required."),
+  paperSize: z.string().optional(),
+  price: z
+    .string()
+    .refine((val) => !isNaN(parseFloat(val)), {
+      message: "Price must be a valid number",
+    })
+    .transform((val) => parseFloat(val))
+    .refine((val) => val <= 10000, {
+      message: "Price must be less than 10000",
+    }),
+});
 
 function AdminPage() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      category: "",
+      customWorks: "",
+      file: undefined,
+      paperSize: "",
+      price: "",
+    },
+  });
+
+  const fileRef = form.register("file");
 
   const onSubmit = (data) => {
     console.log(data);
@@ -15,15 +61,19 @@ function AdminPage() {
     const formData = new FormData();
     formData.append("category", data.category);
     formData.append("customWorks", data.customWorks);
-    formData.append("image", data.image[0]);
+    formData.append("file", data.file[0]);
     formData.append("paperSize", data.paperSize);
     formData.append("price", data.price);
 
     axios
-      .post("/api/products/upload", formData)
+      .post("/api/products/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then((result) => {
         console.log(result);
-        reset();
+        form.reset();
       })
       .catch((err) => {
         console.log(err);
@@ -35,59 +85,117 @@ function AdminPage() {
       <h1 className="my-8 text-center text-5xl font-bold text-primaryBlue">
         Admin Page
       </h1>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        encType="multipart/form-data"
-        className="mx-auto flex min-h-[50vh] w-1/2 flex-col items-center border border-black"
-      >
-        <p className="mt-6 w-1/2">Select Category</p>
-        <select
-          className="my-2 w-1/2 rounded-sm border border-black"
-          {...register("category")}
+
+      {/* Shadcn form */}
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="m-auto w-1/2 space-y-8"
+          encType="multipart/form-data"
         >
-          <option value="Pencil Portrait">Pencil Portrait</option>
-          <option value="Color Portrait">Color Portrait</option>
-          <option value="Caricature">Caricature</option>
-          <option value="Custom Works">Custom Works</option>
-        </select>
+          <FormField
+            control={form.control}
+            name="category"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Category</FormLabel>
+                <Select onValueChange={field.onChange} value={field.value}>
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a category" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="Pencil Portrait">
+                      Pencil Portrait
+                    </SelectItem>
+                    <SelectItem value="Color Portrait">
+                      Color Portrait
+                    </SelectItem>
+                    <SelectItem value="Caricature">Caricature</SelectItem>
+                    <SelectItem value="Custom Works">Custom Works</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <p className="mt-2 w-1/2">Enter Custom Works:</p>
-        <input
-          className="my-1 w-1/2 rounded-sm border border-black"
-          {...register("customWorks")}
-        />
+          <FormField
+            control={form.control}
+            name="customWorks"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Enter custom work type</FormLabel>
+                <FormControl>
+                  <Input placeholder="Custom work type" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <p className="mt-2 w-1/2">Upload Image</p>
-        <input
-          className="mb-2 w-1/2 border border-black"
-          type="file"
-          {...register("image")}
-        />
+          <FormField
+            control={form.control}
+            name="file"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Upload Image</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Upload image file"
+                    type="file"
+                    onChange={(event) => {
+                      field.onChange(event.target?.files?.[0] ?? undefined);
+                    }}
+                    {...fileRef}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <p className="mt-2 w-1/2">Select paper size</p>
-        <select
-          className="mb-2 w-1/2 rounded-sm border border-black"
-          {...register("paperSize")}
-        >
-          <option value="A4">A4</option>
-          <option value="A3">A3</option>
-          <option value="Small">Single Line Drawing</option>
-        </select>
+          <FormField
+            control={form.control}
+            name="paperSize"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Paper Size</FormLabel>
+                <Select onValueChange={field.onChange} value={field.value}>
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a paper size" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="A4">A4</SelectItem>
+                    <SelectItem value="A3">A3</SelectItem>
+                    <SelectItem value="Small">Single Line Drawing</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <p className="mt-2 w-1/2">Enter Price</p>
-        <input
-          className="mb-2 w-1/2 rounded-sm border border-black"
-          type="number"
-          {...register("price", { required: "Price is required" })}
-        />
-        {errors.price && <p className="text-red-500">{errors.price.message}</p>}
-        <button
-          className="my-4 w-1/2 rounded bg-green-400 py-4 font-bold"
-          type="submit"
-        >
-          Sumbit
-        </button>
-      </form>
+          <FormField
+            control={form.control}
+            name="price"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Price</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter price" type="number" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <Button type="submit">Submit</Button>
+        </form>
+      </Form>
     </>
   );
 }
