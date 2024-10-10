@@ -16,6 +16,7 @@ import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
 
 function App() {
+  // Set the base URL for axios
   axios.defaults.baseURL = "http://localhost:5050";
   return (
     <>
