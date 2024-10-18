@@ -19,16 +19,16 @@ function PagesDropDown({ view }) {
           </div>
           <ul className={`flex ${menuOpen ? "flex-col" : "hidden"} flex-grow`}>
             <li className="mx-4 my-2">
-              <Link to={"/pencil-portrait"}>Pencil Portrait</Link>
+              <Link to={"/category/Pencil-Portrait"}>Pencil Portrait</Link>
             </li>
             <li className="mx-4 my-2">
-              <Link to={"/color-portrait"}>Color Portrait</Link>
+              <Link to={"/category/Color-Portrait"}>Color Portrait</Link>
             </li>
             <li className="mx-4 my-2">
-              <Link to={"/caricature"}>Caricature</Link>
+              <Link to={"/category/Caricature"}>Caricature</Link>
             </li>
             <li className="mx-4 my-2">
-              <Link to={"/custom-works"}>Custom Works</Link>
+              <Link to={"/category/Custom-Works"}>Custom Works</Link>
             </li>
           </ul>
         </div>
@@ -41,16 +41,16 @@ function PagesDropDown({ view }) {
             className={`flex ${menuOpen ? "flex-col" : "hidden"} absolute top-14 w-40 flex-grow rounded-md bg-white shadow-lg`}
           >
             <li className="mx-4 my-2 text-lightGrey hover:text-black">
-              <Link to={"/pencil-portrait"}>Pencil Portrait</Link>
+              <Link to={"/category/Pencil-Portrait"}>Pencil Portrait</Link>
             </li>
             <li className="mx-4 my-2 text-lightGrey hover:text-black">
-              <Link to={"/color-portrait"}>Color Portrait</Link>
+              <Link to={"/category/Color-Portrait"}>Color Portrait</Link>
             </li>
             <li className="mx-4 my-2 text-lightGrey hover:text-black">
-              <Link to={"/caricature"}>Caricature</Link>
+              <Link to={"/category/Caricature"}>Caricature</Link>
             </li>
             <li className="mx-4 my-2 text-lightGrey hover:text-black">
-              <Link to={"/custom-works"}>Custom Works</Link>
+              <Link to={"/category/Custom-Works"}>Custom Works</Link>
             </li>
           </ul>
         </div>

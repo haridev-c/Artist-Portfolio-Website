@@ -59,4 +59,18 @@ const getAllProducts = async (req, res) => {
 //   }
 // };
 
-module.exports = { postingProduct, getAllProducts };
+const getProducts = async (req, res) => {
+  console.log("Started getProducts()");
+  try {
+    const { category } = req.params;
+    const transformedCategory = category.replace("-", " ");
+    const products = await Product.find({ category: transformedCategory });
+    if (!products) return res.status(404).json({ error: "No products found" });
+    return res.status(200).json({ products });
+  } catch (error) {
+    console.log("Error in getProducts() in productController.js: ");
+    console.error(error);
+  }
+};
+
+module.exports = { postingProduct, getAllProducts, getProducts };
