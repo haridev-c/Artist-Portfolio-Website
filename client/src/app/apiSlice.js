@@ -9,7 +9,15 @@ export const apiSlice = createApi({
         url: `/products/category/${category}`,
       }),
     }),
+
+    uploadProduct: builder.mutation({
+      query: (formData) => ({
+        url: "/products/upload",
+        method: "POST",
+        body: formData,
+      }),
+    }),
   }),
 });
 
-export const { useGetProductsQuery } = apiSlice;
+export const { useGetProductsQuery, useUploadProductMutation } = apiSlice;

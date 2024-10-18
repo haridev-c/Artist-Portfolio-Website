@@ -1,6 +1,8 @@
 // Desc: Admin page to upload products to the database
 
-import axios from "axios";
+// redux imports
+import { useUploadProductMutation } from "@/app/apiSlice";
+
 import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -89,6 +91,8 @@ function AdminPage() {
 
   const { toast } = useToast();
 
+  const [uploadProduct] = useUploadProductMutation();
+
   const onSubmit = async (data) => {
     try {
       console.log(data);
@@ -100,10 +104,10 @@ function AdminPage() {
       formData.append("paperSize", data.paperSize);
       formData.append("price", data.price);
 
-      const response = await axios.post("/api/products/upload", formData);
-      console.log(response.data);
+      const responseData = await uploadProduct(formData).unwrap();
+      console.log(responseData);
       toast({
-        title: "Form submitted succesfully",
+        title: "Product added successfully",
       });
       form.reset();
     } catch (error) {

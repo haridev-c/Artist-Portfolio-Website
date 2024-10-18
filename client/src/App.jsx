@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import axios from "axios";
 
 // shadcn imports
 import { Toaster } from "@/components/ui/toaster";
@@ -13,8 +12,6 @@ import AdminPage from "./pages/AdminPage";
 import CategoryArtsPage from "./pages/CategoryArtsPage";
 
 function App() {
-  // Set the base URL for axios
-  axios.defaults.baseURL = "http://localhost:5050";
   return (
     <>
       <Routes>
